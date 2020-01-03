@@ -42,7 +42,7 @@ export default function Swipe() {
 
     // componentWillUnmount
     useEffect(() => {
-        return () => { 
+        return () => {
             clearInterval(timeInterval)
         }
     }, [])

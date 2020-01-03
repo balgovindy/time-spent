@@ -1,8 +1,9 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
-const AntdDayjsWebpackPlugin =require('antd-dayjs-webpack-plugin');
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 
-const SRC_DIR = path.resolve(__dirname, 'src')
+const SRC_DIR = path.resolve(__dirname, 'src');
+
 module.exports = {
   entry: SRC_DIR + '/index.js',
   output: {
