@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button } from 'antd';
-import { SWIPE_IN, SWIPE_OUT } from './../../Utility/constant';
+import { SWIPE_IN } from './../../Utility/constant';
 import { getCurrentTime, timeInSecond, timeCalculate, todaysDate } from './../../Utility/utils';
 import './Swipe.css';
 
@@ -55,7 +55,7 @@ export default function Swipe() {
     return (
         <div className='main-container'>
             <Card title={elapseTime} bordered={true} className='main-card'>
-                <Button onClick={handleClick}>{isSwiped ? SWIPE_OUT : SWIPE_IN}</Button>
+               {isSwiped && <Button onClick={handleClick}>{SWIPE_IN}</Button>}
             </Card>
         </div>
     )
