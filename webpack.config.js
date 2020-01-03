@@ -5,6 +5,10 @@ const AntdDayjsWebpackPlugin =require('antd-dayjs-webpack-plugin');
 const SRC_DIR = path.resolve(__dirname, 'src')
 module.exports = {
   entry: SRC_DIR + '/index.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
   module: {
     rules: [
       {
