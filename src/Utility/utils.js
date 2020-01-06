@@ -17,4 +17,4 @@ export const timeCalculate = (time) => {
   return [lhr, lmt, lsec].map(x => x.toString()).join(':');
 }
 
-export const todaysDate = () => new Date().toLocaleDateString().split('/')[0]
+export const todaysDate = () => new Date().toLocaleDateString().split('/')[1]

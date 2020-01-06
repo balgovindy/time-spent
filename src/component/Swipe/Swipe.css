@@ -1,11 +1,4 @@
 .main-container {
-    margin-left: 20px;
-    padding-top: 20px;
-
-}
-
-.main-card {
-    width: calc(100vw - 40px);
-    position: relative;
     text-align: center;
-}
+ }
+ 

@@ -17,13 +17,15 @@ export default function Swipe() {
     useEffect(() => {
         const storageData = JSON.parse(localStorage.getItem('swipe_In'));
         const _todays_date = JSON.parse(localStorage.getItem('swipe_Date'));
-        
         if (!!storageData && _todays_date === todaysDate()) {
             toggleSwipe(true)
             const _swipe_In_time = timeInSecond(storageData);
             timeInterval = setInterval(() => {
                 setElapseTime(_swipe_In_time)
             }, 1000)
+        } else if (_todays_date !== todaysDate() && storageData) {
+            localStorage.removeItem('swipe_In')
+            toggleSwipe(false)
         }
     }, [])
 
@@ -54,9 +56,8 @@ export default function Swipe() {
 
     return (
         <div className='main-container'>
-            <Card title={elapseTime} bordered={true} className='main-card'>
-               {isSwiped && <Button onClick={handleClick}>{SWIPE_IN}</Button>}
-            </Card>
+            <h1>{elapseTime}</h1>
+            {!isSwiped && <Button onClick={handleClick} type="primary">{SWIPE_IN}</Button>}
         </div>
     )
 }
